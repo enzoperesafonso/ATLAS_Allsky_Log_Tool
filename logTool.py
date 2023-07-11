@@ -61,8 +61,9 @@ def check_log_files(MJD: float, atlas_site_code: str):
 
     return None
 
+
 # Get images in a time window specified in UTC
-def check_log_files_window(window_start, delta_hours, ATLAS_site_code):  # inefficient but works...
+def check_log_files_window(window_start, delta_hours, ATLAS_site_code):
     delta_time = np.linspace(0, delta_hours, delta_hours * 60 * 60) * u.hour
     observing_window = Time(window_start, format="iso", scale="ut1") + delta_time
     observing_window.format = "mjd"

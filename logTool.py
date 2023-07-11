@@ -77,6 +77,4 @@ def check_log_files_window(window_start, delta_hours, ATLAS_site_code):  # ineff
         if line and (line not in image_filenames):
             image_filenames.append(line)
 
-    with open("{}_{}.txt".format(window_start, ATLAS_site_code), "w") as file:
-        for item in image_filenames:
-            file.write(item[0] + "\n")
+    return image_filenames
